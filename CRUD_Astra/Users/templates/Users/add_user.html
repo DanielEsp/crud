@@ -1,0 +1,19 @@
+{% extends 'Users/layout_user.html' %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid" bg-white>
+    <div class="container" text-center>
+        <h1 class="display-8 text-center">Add User</h1>
+    </div>
+</div>
+<div class="container text-center">
+    <form method="post">
+            {% csrf_token %}
+        <div class="form-group">
+            {{ userform }}
+            <button type="submit" class="btn btn-primary btn-sm">Add User</button>
+            <a class="btn btn-danger btn-sm" href="{% url 'main_user' %}">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

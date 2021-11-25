@@ -1,0 +1,20 @@
+{% extends 'Shipments/layout_shipment.html' %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid" bg-white>
+    <div class="container" text-center>
+        <h1 class="display-4 text-center">Add Shipment</h1>
+    </div>
+</div>
+<div class="container text-center">
+    <form method="post">
+            {% csrf_token %}
+        <div class="form-group">
+            {{ shipmentform }}
+            <button type="submit" class="btn btn-primary btn-sm">Add Shipment</button>
+            <a class="btn btn-danger btn-sm" href="{% url 'main_shipment' %}">Cancel</a>
+        </div>
+      </form>
+</div>
+
+{% endblock %}
